@@ -1,0 +1,52 @@
+* ruff-fix.el
+
+  An Emacs package that uses [[https://github.com/ruff-lang/ruff][Ruff]] to automatically fix lint violations in Python code.
+
+** Features
+
+   - Automatically fix lint violations in the current buffer using Ruff.
+   - Optionally fix lint violations before saving the buffer.
+   - Follows Ruff's configuration rules as described in the [[https://beta.ruff.rs/docs/configuration/][Ruff documentation]].
+
+** Installation
+
+   1. Clone this repository to a directory of your choice:
+      #+begin_src sh
+        git clone https://github.com/mkt3/ruff-fix.el.git /path/to/your/directory
+      #+end_src
+
+   2. Add the cloned directory to your =load-path= by adding the following line to your Emacs configuration file (=init.el= or =.emacs=):
+      #+begin_src emacs-lisp
+        (add-to-list 'load-path "/path/to/your/directory")
+      #+end_src
+
+   3. Require the package in your Emacs configuration:
+      #+begin_src emacs-lisp
+        (require 'ruff-fix)
+      #+end_src
+
+** Usage
+
+*** Fix lint violations manually
+
+    You can fix lint violations in the current buffer manually by calling the =ruff-fix-buffer= function:
+
+    #+begin_src emacs-lisp
+      M-x ruff-fix-buffer
+    #+end_src
+
+*** Fix lint violations automatically before saving
+
+    To automatically fix lint violations before saving a buffer, add the =ruff-fix-before-save= function to the =before-save-hook=:
+
+    #+begin_src emacs-lisp
+      (add-hook 'before-save-hook 'ruff-fix-before-save)
+    #+end_src
+
+    This function will only be executed when the =major-mode= is =python-mode= or =python-ts-mode=.
+
+** Configuration
+   =ruff-fix.el= follows Ruff's configuration rules specified in the [[https://beta.ruff.rs/docs/configuration/][Ruff documentation]]. Please refer to the documentation to configure Ruff according to your requirements and preferences.
+
+** License
+   =ruff-fix.el= is licensed under the [[https://www.gnu.org/licenses/gpl-3.0.en.html][GNU General Public License v3.0]] or later.
