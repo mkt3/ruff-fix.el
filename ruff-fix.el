@@ -60,7 +60,7 @@
          (temp-file (make-temp-file "temp-ruff-" nil temporary-file-name-suffix))
          (current-point (point)))
     (write-region (point-min) (point-max) temp-file nil)
-    (shell-command (format "ruff check --fix %s" temp-file))
+    (shell-command-to-string (format "ruff check --fix %s" temp-file))
     (erase-buffer)
     (insert-file-contents temp-file)
     (delete-file temp-file)
