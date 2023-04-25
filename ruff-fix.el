@@ -54,12 +54,14 @@
   (let* ((temporary-file-directory (if (buffer-file-name)
                                        (file-name-directory (buffer-file-name))
                                      temporary-file-directory))
-         (temp-file (make-temp-file "temp-")))
+         (temp-file (make-temp-file "temp-"))
+         (current-point (point)))
     (write-region (point-min) (point-max) temp-file nil)
     (shell-command (format "ruff check --fix %s" temp-file))
     (erase-buffer)
     (insert-file-contents temp-file)
-    (delete-file temp-file)))
+    (delete-file temp-file)
+    (goto-char current-point)))
 
 ;;;###autoload
 (defun ruff-fix-before-save ()
