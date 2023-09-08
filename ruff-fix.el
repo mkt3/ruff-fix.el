@@ -1,10 +1,10 @@
 ;;; ruff-fix.el --- Use ruff to fix lint violations -*- lexical-binding: t; -*-
 
-;; Copyright (C) 2023 Makoto Morinaga  <makoto@mkt3.me>
+;; Copyright (C) 2023 Makoto Morinaga  <makoto@mkt3.dev>
 
-;; Author: Makoto Morinaga  <makoto@mkt3.me>
-;; Maintainer: Makoto Morinaga  <makoto@mkt3.me>
-;; Version: 0.1.0
+;; Author: Makoto Morinaga  <makoto@mkt3.dev>
+;; Maintainer: Makoto Morinaga  <makoto@mkt3.dev>
+;; Version: 0.1.1
 ;; URL: https://github.com/mkt3/ruff-fix.el
 
 ;; This program is free software: you can redistribute it and/or modify
